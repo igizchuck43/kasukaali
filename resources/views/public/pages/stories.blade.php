@@ -1,0 +1,1 @@
+<x-layouts.public title="Success Stories"><section class="py-16"><div class="mx-auto max-w-7xl px-4"><h1 class="text-4xl font-extrabold">Success Stories</h1><div class="mt-8 grid gap-5 md:grid-cols-3">@foreach($testimonials as $testimonial)<x-public.testimonial-card :testimonial="$testimonial" />@endforeach</div></div></section></x-layouts.public>

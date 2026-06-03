@@ -1,0 +1,4 @@
+<x-layouts.user title="Chat">
+    @php($other = $match->otherUser(auth()->user()))
+    <div class="grid gap-6 lg:grid-cols-4"><aside class="space-y-3">@foreach($matches as $item)<x-user.match-card :match="$item" />@endforeach</aside><section class="rounded-lg border border-borderSoft bg-white shadow-soft lg:col-span-3"><div class="border-b border-borderSoft p-5 font-bold">{{ $other->name }}</div><div data-chat-poll="{{ route('user.chat', $match) }}" class="h-[480px] overflow-y-auto p-5"><x-user.chat-box :messages="$messages" /></div><form method="POST" action="{{ route('user.chat.store', $match) }}" class="border-t border-borderSoft p-4">@csrf<div class="flex gap-3"><input name="message" class="min-w-0 flex-1 rounded-full border border-borderSoft px-4 py-3" placeholder="Write a message"><button class="btn-primary">Send</button></div></form></section></div>
+</x-layouts.user>

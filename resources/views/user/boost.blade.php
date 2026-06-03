@@ -1,0 +1,1 @@
+<x-layouts.user title="Boost Profile"><div class="rounded-lg border border-accent bg-white p-8 shadow-soft"><h1 class="text-3xl font-extrabold">Boost Profile</h1><p class="mt-3 text-muted">Premium boosts will place your profile higher in discovery. Payment integration is ready for a future provider.</p><button class="btn-premium mt-6">Boost Profile</button></div></x-layouts.user>

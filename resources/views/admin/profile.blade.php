@@ -1,0 +1,1 @@
+<x-layouts.admin title="Admin Profile"><h1 class="text-3xl font-extrabold">Admin Profile</h1><div class="mt-6 rounded-lg border border-borderSoft bg-white p-6 shadow-soft">{{ auth()->user()->name }} · {{ auth()->user()->email }}</div></x-layouts.admin>

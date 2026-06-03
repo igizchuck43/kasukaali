@@ -3,22 +3,20 @@
 namespace Database\Factories;
 
 use App\Models\ProfilePhoto;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<ProfilePhoto>
- */
+/** @extends Factory<ProfilePhoto> */
 class ProfilePhotoFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::factory(),
+            'image_path' => 'profile-photos/sample.jpg',
+            'is_primary' => true,
+            'sort_order' => 1,
+            'status' => 'approved',
         ];
     }
 }

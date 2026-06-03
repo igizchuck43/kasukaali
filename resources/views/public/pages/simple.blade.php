@@ -1,0 +1,1 @@
+<x-layouts.public :title="$title"><section class="bg-surface py-20"><div class="mx-auto max-w-4xl px-4"><h1 class="text-4xl font-extrabold">{{ $title }}</h1><p class="mt-5 text-lg leading-8 text-muted">{{ $body }}</p><a href="{{ route('register') }}" class="btn-primary mt-8">Join Kasukaali</a></div></section></x-layouts.public>

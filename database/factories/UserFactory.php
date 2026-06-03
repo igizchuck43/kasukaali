@@ -26,7 +26,17 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'username' => fake()->unique()->userName(),
             'email' => fake()->unique()->safeEmail(),
+            'phone' => fake()->unique()->numerify('+2567########'),
+            'role' => 'user',
+            'status' => 'approved',
+            'gender' => fake()->randomElement(['woman', 'man']),
+            'dob' => fake()->dateTimeBetween('-45 years', '-19 years')->format('Y-m-d'),
+            'city' => fake()->randomElement(['Kampala', 'Entebbe', 'Jinja', 'Mbarara']),
+            'country' => 'Uganda',
+            'looking_for' => fake()->randomElement(['women', 'men', 'everyone']),
+            'relationship_intention' => fake()->randomElement(['Long-term relationship', 'New friends', 'Meaningful dating']),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
@@ -41,5 +51,15 @@ class UserFactory extends Factory
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+    public function pending(): static
+    {
+        return $this->state(fn () => ['status' => 'pending']);
+    }
+
+    public function approved(): static
+    {
+        return $this->state(fn () => ['status' => 'approved']);
     }
 }

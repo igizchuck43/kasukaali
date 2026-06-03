@@ -5,20 +5,11 @@ namespace Database\Factories;
 use App\Models\Interest;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<Interest>
- */
+/** @extends Factory<Interest> */
 class InterestFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
-        return [
-            //
-        ];
+        return ['name' => fake()->unique()->word(), 'slug' => fake()->unique()->slug(2), 'icon' => 'heart', 'status' => 'active'];
     }
 }

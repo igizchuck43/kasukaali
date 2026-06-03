@@ -1,0 +1,1 @@
+<x-layouts.user title="Blocked Users"><h1 class="text-3xl font-extrabold">Blocked Users</h1><div class="mt-6 space-y-3">@foreach($blocks as $block)<div class="rounded-lg border border-borderSoft bg-white p-4 shadow-soft">{{ $block->blocked->name }}</div>@endforeach</div></x-layouts.user>

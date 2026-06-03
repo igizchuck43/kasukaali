@@ -1,0 +1,1 @@
+<x-layouts.public title="Premium Plans"><section class="bg-surface py-16"><div class="mx-auto max-w-7xl px-4"><h1 class="text-4xl font-extrabold">Premium Plans</h1><div class="mt-8 grid gap-5 md:grid-cols-4">@foreach($plans as $plan)<x-public.pricing-card :plan="$plan" />@endforeach</div></div></section></x-layouts.public>

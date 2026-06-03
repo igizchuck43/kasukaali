@@ -1,0 +1,1 @@
+<x-layouts.admin title="Plans"><h1 class="text-3xl font-extrabold">Plans</h1><div class="mt-6 grid gap-5 md:grid-cols-4">@foreach($plans as $plan)<x-public.pricing-card :plan="$plan" />@endforeach</div><div class="mt-6">{{ $plans->links() }}</div></x-layouts.admin>

@@ -1,0 +1,1 @@
+<x-layouts.user title="Settings"><h1 class="text-3xl font-extrabold">Settings</h1><div class="mt-6 rounded-lg border border-borderSoft bg-white p-6 shadow-soft">Privacy, visibility, and notification controls are ready to extend.</div></x-layouts.user>

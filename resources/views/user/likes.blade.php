@@ -1,0 +1,1 @@
+<x-layouts.user :title="$title"><h1 class="text-3xl font-extrabold">{{ $title }}</h1><div class="mt-6 rounded-lg border border-borderSoft bg-white p-6 shadow-soft">Premium-only visibility is locked for free users.</div></x-layouts.user>

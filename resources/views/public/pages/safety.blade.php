@@ -1,0 +1,1 @@
+<x-layouts.public title="Safety"><section class="py-16"><div class="mx-auto max-w-7xl px-4"><h1 class="text-4xl font-extrabold">Safety First</h1><div class="mt-8 grid gap-5 md:grid-cols-3">@foreach($tips as $tip)<x-public.feature-card :title="$tip->title" :body="$tip->content" />@endforeach</div></div></section></x-layouts.public>

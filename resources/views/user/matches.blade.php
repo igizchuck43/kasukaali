@@ -1,0 +1,1 @@
+<x-layouts.user title="Matches"><h1 class="text-3xl font-extrabold">Matches</h1><div class="mt-6 grid gap-5 md:grid-cols-3">@foreach($matches as $match)<x-user.match-card :match="$match" />@endforeach</div><div class="mt-6">{{ $matches->links() }}</div></x-layouts.user>

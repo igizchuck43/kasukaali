@@ -14,9 +14,25 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('username')->unique();
             $table->string('email')->unique();
+            $table->string('phone')->nullable();
+            $table->string('role')->default('user')->index();
+            $table->string('status')->default('pending')->index();
+            $table->string('gender')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('city')->nullable();
+            $table->string('country')->default('Uganda');
+            $table->string('looking_for')->nullable();
+            $table->string('relationship_intention')->nullable();
+            $table->boolean('is_verified')->default(false);
+            $table->boolean('is_premium')->default(false);
+            $table->timestamp('last_active_at')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->timestamp('approved_at')->nullable();
+            $table->foreignId('approved_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->text('rejected_reason')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

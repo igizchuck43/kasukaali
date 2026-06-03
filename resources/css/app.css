@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +7,61 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-primary: #FF4F5E;
+    --color-primaryDark: #E63B4A;
+    --color-secondary: #111827;
+    --color-accent: #FBBF24;
+    --color-background: #FFFFFF;
+    --color-surface: #F9FAFB;
+    --color-surfaceDark: #1F2937;
+    --color-borderSoft: #E5E7EB;
+    --color-muted: #6B7280;
+    --color-lightText: #F9FAFB;
+    --color-success: #22C55E;
+    --color-danger: #EF4444;
+    --shadow-soft: 0 16px 45px rgba(17, 24, 39, .10);
+    --shadow-glow: 0 0 0 4px rgba(255, 79, 94, .13), 0 18px 36px rgba(255, 79, 94, .25);
+    --animate-float: float 5s ease-in-out infinite;
+    --animate-fade-up: fade-up .55s ease-out both;
+    --animate-soft-bounce: soft-bounce 1.8s ease-in-out infinite;
+    --animate-counter: counter-pop .45s ease-out both;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes soft-bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+}
+
+@keyframes counter-pop {
+    from { transform: scale(.96); opacity: .65; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+body {
+    background: #FFFFFF;
+    color: #111827;
+}
+
+.btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-primaryDark;
+}
+
+.btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-borderSoft bg-white px-6 py-3 text-sm font-semibold text-secondary transition hover:border-primary hover:text-primary;
+}
+
+.btn-premium {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-secondary transition hover:-translate-y-0.5;
 }
